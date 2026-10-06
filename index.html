@@ -8,9 +8,11 @@
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Антон Кирсанов — портфолио">
 <meta property="og:description" content="Портфолио Антона Кирсанова: маркетинг и бренд-коммуникации для гостиничных проектов. Запуск загородного клуба «Талони», кейсы, видео, бренд и печатная продукция.">
-<meta property="og:image" content="img/photo.jpg">
+<meta property="og:url" content="https://kirsanov-marketing.github.io/portfolio/">
+<meta property="og:image" content="https://kirsanov-marketing.github.io/portfolio/photo.jpg">
+<meta property="og:locale" content="ru_RU">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232E5B48'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='600' fill='%23fff' text-anchor='middle'%3EАК%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="fonts.css">
 <style>
 /* Layout: one calm reading column, each case laid out as a hotel-style "card file": task → actions → result strip */
 :root{
@@ -152,7 +154,9 @@ footer h2{font-size:24px}
 }
 @media (prefers-reduced-motion:no-preference){.btn,.chip{transition:background .15s}}
 
+.print-only{display:none}
 @media print{
+  .print-only{display:block;font-size:13px;color:var(--muted)}
   @page{size:A4;margin:14mm 12mm}
   :root{--bg:#fff;--surface:#fff;--fg:#18221D;--muted:#5A6760;--line:#D9DFD8;--accent:#2E5B48;--accent-soft:#E2ECE6;--bar:#3F7A60;color-scheme:light}
   html,body{background:#fff}
@@ -174,7 +178,7 @@ footer h2{font-size:24px}
 
 <header class="hero">
   <div class="hero-top">
-    <img class="avatar" src="img/photo.jpg" alt="Антон Кирсанов" width="240" height="240">
+    <img class="avatar" src="photo.jpg" alt="Антон Кирсанов" width="240" height="240">
     <div class="hero-id">
       <span class="label">Портфолио · Санкт-Петербург</span>
       <h1>Антон Кирсанов</h1>
@@ -186,6 +190,7 @@ footer h2{font-size:24px}
     <span class="chip"><span class="val" id="phone">+7 (911) 944-99-31</span><button type="button" data-copy="phone">Копировать</button></span>
     <span class="chip"><span class="val" id="mail">kirant91@ya.ru</span><button type="button" data-copy="mail">Копировать</button></span>
   </div>
+  <p class="print-only">Онлайн-версия с фотогалереей: <a href="https://kirsanov-marketing.github.io/portfolio/">kirsanov-marketing.github.io/portfolio</a></p>
 </header>
 
 <section aria-labelledby="h-cases">
@@ -413,12 +418,12 @@ footer h2{font-size:24px}
   var grid=document.getElementById("works");
   works.forEach(function(w,wi){
     var a=document.createElement("article");a.className="work";
-    a.innerHTML='<button type="button" aria-label="Открыть: '+w.t+'"><img loading="lazy" src="img/'+w.imgs[0][0]+'.jpg" alt="'+w.imgs[0][1]+'"><span class="count">'+w.imgs.length+' фото</span></button><h3>'+w.t+'</h3><p>'+w.d+'</p>';
+    a.innerHTML='<button type="button" aria-label="Открыть: '+w.t+'"><img loading="lazy" src="'+w.imgs[0][0]+'.jpg" alt="'+w.imgs[0][1]+'"><span class="count">'+w.imgs.length+' фото</span></button><h3>'+w.t+'</h3><p>'+w.d+'</p>';
     a.querySelector("button").addEventListener("click",function(){openLb(wi,0)});
     grid.appendChild(a);
   });
   var lb=document.getElementById("lb"),li=document.getElementById("lb-img"),lc=document.getElementById("lb-cap"),cw=0,ci=0;
-  function show(){var it=works[cw].imgs[ci];li.src="img/"+it[0]+".jpg";li.alt=it[1];lc.textContent=it[1]+" · "+(ci+1)+"/"+works[cw].imgs.length}
+  function show(){var it=works[cw].imgs[ci];li.src=""+it[0]+".jpg";li.alt=it[1];lc.textContent=it[1]+" · "+(ci+1)+"/"+works[cw].imgs.length}
   function openLb(w,i){cw=w;ci=i;show();try{lb.showModal()}catch(e){lb.setAttribute("open","")}}
   function step(n){var L=works[cw].imgs.length;ci=(ci+n+L)%L;show()}
   document.getElementById("lb-prev").onclick=function(){step(-1)};
