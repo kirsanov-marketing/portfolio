@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Антон Кирсанов — портфолио</title>
+<meta name="description" content="Портфолио Антона Кирсанова: маркетинг и бренд-коммуникации для гостиничных проектов. Запуск загородного клуба «Талони», кейсы, видео, бренд и печатная продукция.">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Антон Кирсанов — портфолио">
+<meta property="og:description" content="Портфолио Антона Кирсанова: маркетинг и бренд-коммуникации для гостиничных проектов. Запуск загородного клуба «Талони», кейсы, видео, бренд и печатная продукция.">
+<meta property="og:image" content="img/photo.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232E5B48'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='600' fill='%23fff' text-anchor='middle'%3EАК%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+/* Layout: one calm reading column, each case laid out as a hotel-style "card file": task → actions → result strip */
+:root{
+  --bg:#F3F5F1; --surface:#FFFFFF; --fg:#18221D; --muted:#5A6760; --line:#D9DFD8;
+  --accent:#2E5B48; --accent-soft:#E2ECE6; --bar:#3F7A60;
+  --display:"Literata", Georgia, "Times New Roman", serif;
+  --body:"Golos Text", "Segoe UI", Roboto, Arial, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121815; --surface:#19211D; --fg:#E7ECE8; --muted:#9AA8A0; --line:#2C3832;
+  --accent:#8CC2A6; --accent-soft:#213229; --bar:#7DB497; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121815; --surface:#19211D; --fg:#E7ECE8; --muted:#9AA8A0; --line:#2C3832;
+  --accent:#8CC2A6; --accent-soft:#213229; --bar:#7DB497; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding-inline:20px;padding-block:56px 72px;display:flex;flex-direction:column;gap:72px}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.15;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* Hero */
+.hero{display:flex;flex-direction:column;gap:20px}
+.hero-top{display:flex;align-items:center;gap:28px}
+.hero-id{display:flex;flex-direction:column;gap:12px;min-width:0}
+.avatar{width:148px;height:148px;border-radius:50%;object-fit:cover;flex:none;border:1px solid var(--line);background:var(--surface)}
+@media (max-width:560px){.hero-top{flex-direction:column;align-items:flex-start;gap:18px}.avatar{width:112px;height:112px}}
+.hero h1{font-size:clamp(36px,6vw,56px);letter-spacing:-.01em}
+.hero .role{font-size:clamp(18px,2.4vw,22px);color:var(--accent);font-weight:500}
+.hero .lead{max-width:62ch;color:var(--fg)}
+.contacts{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-top:4px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:14px;color:var(--fg);text-decoration:none}
+.chip button{font:inherit;font-size:12px;color:var(--accent);background:none;border:0;padding:0;cursor:pointer}
+.chip .val{user-select:all;font-variant-numeric:tabular-nums}
+
+/* Sections */
+section{display:flex;flex-direction:column;gap:28px}
+.sec-head{display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--line);padding-top:20px}
+.sec-head h2{font-size:clamp(26px,3.6vw,32px)}
+
+/* Case */
+.case{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:20px}
+.case-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;align-items:baseline}
+.case h3{font-size:22px}
+.case .where{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px 32px}
+.grid2>div{min-width:0;display:flex;flex-direction:column;gap:6px}
+.case ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.case li::marker{color:var(--accent)}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.metric{background:var(--accent-soft);padding:14px 16px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.metric b{font-family:var(--display);font-size:26px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--fg);line-height:1.2}
+.metric span{font-size:13px;color:var(--muted);line-height:1.35}
+.note{font-size:14px;color:var(--muted)}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:8px;border:1px solid var(--accent);color:var(--accent);text-decoration:none;font-size:14px;font-weight:500}
+.btn:hover{background:var(--accent-soft)}
+
+/* Chart */
+figure{margin:0;display:flex;flex-direction:column;gap:10px}
+figcaption{font-size:14px;color:var(--muted)}
+.chart{position:relative}
+.chart svg{width:100%;height:auto;display:block;overflow:visible}
+.chart .tick{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+.chart .val{font-family:var(--mono);font-size:12px;fill:var(--fg);font-weight:500}
+.chart .grid{stroke:var(--line);stroke-width:1}
+.chart path.b{fill:var(--bar)}
+.chart rect.hit{fill:transparent;cursor:default}
+.chart g.col{outline:none}
+.chart g.col:hover path.b,.chart g.col:focus path.b{opacity:.8}
+.tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font-size:13px;padding:6px 10px;border-radius:6px;white-space:nowrap;transform:translate(-50%,-110%);font-variant-numeric:tabular-nums}
+
+/* Video playlists */
+.pl{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.pl div{border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.pl b{font-weight:600;font-size:15px}
+.pl span{font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* Path */
+.path{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.path li{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.path li:last-child{border-bottom:0}
+.path .yr{font-family:var(--mono);font-size:14px;color:var(--accent);font-variant-numeric:tabular-nums;padding-top:2px}
+.path b{font-weight:600}
+.path p{color:var(--muted);font-size:15px}
+.path>li>div{min-width:0;display:flex;flex-direction:column;gap:2px}
+
+.skill-groups{display:flex;flex-direction:column;gap:18px}
+.sg{display:grid;grid-template-columns:200px 1fr;gap:12px;align-items:start}
+.sg-t{font-size:14px;color:var(--muted);padding-top:7px}
+@media (max-width:640px){.sg{grid-template-columns:1fr;gap:8px}.sg-t{padding-top:0}}
+.skills{display:flex;flex-wrap:wrap;gap:8px}
+.skills small{color:var(--muted);font-size:12px;margin-left:4px}
+.skills span{padding:6px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:14px}
+
+/* Videos */
+.vids{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.vid{display:flex;flex-direction:column;gap:10px;padding:16px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--fg);min-width:0}
+.vid:hover{border-color:var(--accent);background:var(--accent-soft)}
+.vid b{font-weight:600;font-size:15px;line-height:1.35}
+.vid .go{font-size:13px;color:var(--accent);font-weight:500;margin-top:auto}
+.roles{display:flex;flex-wrap:wrap;gap:6px}
+.roles span{font-family:var(--mono);font-size:11px;padding:3px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.roles span.other{background:transparent;border:1px dashed var(--line);color:var(--muted)}
+
+/* Works gallery */
+.works{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
+.work{display:flex;flex-direction:column;gap:10px;min-width:0}
+.work button{all:unset;cursor:zoom-in;display:block;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--surface);aspect-ratio:4/3;position:relative}
+.work button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.work img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.work .count{position:absolute;right:10px;bottom:10px;font-family:var(--mono);font-size:12px;background:var(--fg);color:var(--bg);padding:3px 8px;border-radius:999px}
+.work h3{font-size:18px}
+.work p{font-size:14px;color:var(--muted);line-height:1.45}
+.credit{font-size:14px;color:var(--muted);max-width:62ch}
+
+/* Lightbox */
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(1100px,96vw);width:96vw;color:var(--fg)}
+dialog.lb::backdrop{background:rgba(10,14,12,.86)}
+.lb-inner{display:flex;flex-direction:column;gap:12px;align-items:center}
+.lb-inner img{max-width:100%;max-height:78vh;border-radius:8px;background:#fff}
+.lb-bar{display:flex;gap:10px;align-items:center;justify-content:space-between;width:100%;color:#E7ECE8;font-size:14px}
+.lb-bar button{font:inherit;font-size:14px;color:#E7ECE8;background:rgba(255,255,255,.12);border:0;border-radius:8px;padding:8px 14px;cursor:pointer}
+.lb-bar button:hover{background:rgba(255,255,255,.22)}
+.lb-bar span{flex:1;text-align:center;min-width:0}
+
+footer{border-top:1px solid var(--line);padding-top:24px;display:flex;flex-direction:column;gap:14px}
+footer h2{font-size:24px}
+
+@media (max-width:640px){
+  .wrap{gap:56px;padding-block:36px 56px}
+  .case{padding:20px}
+  .grid2{grid-template-columns:1fr}
+  .path li{grid-template-columns:1fr;gap:4px}
+}
+@media (prefers-reduced-motion:no-preference){.btn,.chip{transition:background .15s}}
+
+@media print{
+  @page{size:A4;margin:14mm 12mm}
+  :root{--bg:#fff;--surface:#fff;--fg:#18221D;--muted:#5A6760;--line:#D9DFD8;--accent:#2E5B48;--accent-soft:#E2ECE6;--bar:#3F7A60;color-scheme:light}
+  html,body{background:#fff}
+  body{font-size:13px}
+  .wrap{padding:0;gap:36px;max-width:none}
+  .chip button,dialog.lb,.tip,.work .count{display:none!important}
+  .case,.metrics,.case-top,.chart,.vid,.work,.sg,.path li,figure,footer{break-inside:avoid}
+  h2,h3,.sec-head{break-after:avoid}
+  .works{grid-template-columns:repeat(2,1fr)}
+  .work button{cursor:default}
+  .vid:hover{background:none}
+  a{color:var(--accent)}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="hero-top">
+    <img class="avatar" src="img/photo.jpg" alt="Антон Кирсанов" width="240" height="240">
+    <div class="hero-id">
+      <span class="label">Портфолио · Санкт-Петербург</span>
+      <h1>Антон Кирсанов</h1>
+      <p class="role">Маркетинг и бренд-коммуникации для гостиничных проектов</p>
+    </div>
+  </div>
+  <p class="lead">14 лет в маркетинге: от аналитика до руководителя отдела рекламы в промышленной компании. С 2023 года веду маркетинг и запуск загородного клуба «Талони» в Ленобласти. Учусь управлению гостиничным бизнесом в SWISSAM. Умею и выстроить систему, и сделать руками: текст, съёмку, монтаж, сайт.</p>
+  <div class="contacts">
+    <span class="chip"><span class="val" id="phone">+7 (911) 944-99-31</span><button type="button" data-copy="phone">Копировать</button></span>
+    <span class="chip"><span class="val" id="mail">kirant91@ya.ru</span><button type="button" data-copy="mail">Копировать</button></span>
+  </div>
+</header>
+
+<section aria-labelledby="h-cases">
+  <div class="sec-head">
+    <span class="label">Кейсы</span>
+    <h2 id="h-cases">Проекты и результаты</h2>
+  </div>
+
+  <article class="case">
+    <div class="case-top">
+      <h3>Загородный клуб «Талони»: запуск и маркетинг</h3>
+      <span class="where">2023 — сейчас · Приозерский р-н, ЛО</span>
+    </div>
+    <p>Коттеджный клуб в 130 км от Петербурга: 5 категорий размещения, pet-friendly, рядом три горнолыжных курорта. Подключился на этапе идеи, вёл ввод объекта в эксплуатацию и сейчас отвечаю за маркетинг и дистрибуцию.</p>
+    <div class="grid2">
+      <div>
+        <span class="label">Запуск</span>
+        <ul>
+          <li>Сайт на Tilda с нуля, затем полная переработка структуры и текстов</li>
+          <li>Система бронирований и подключение OTA-площадок</li>
+          <li>Организация фото- и видеосъёмки объекта, подбор декора</li>
+        </ul>
+      </div>
+      <div>
+        <span class="label">Операционная работа</span>
+        <ul>
+          <li>Соцсети, карточки в агрегаторах и на картах, ответы на отзывы</li>
+          <li>Сопровождение бронирований, учёт</li>
+          <li>Стратегия с инвесторами: банный комплекс, межсезонье, смена системы бронирования</li>
+        </ul>
+      </div>
+    </div>
+    <div class="links"><a class="btn" href="https://taloni-club.ru" target="_blank" rel="noopener">taloni-club.ru ↗</a></div>
+  </article>
+
+  <article class="case">
+    <div class="case-top">
+      <h3>Аудит рекламы «Талони»</h3>
+      <span class="where">2026 · Яндекс Директ, Метрика, 2ГИС</span>
+    </div>
+    <div class="grid2">
+      <div>
+        <span class="label">Задача</span>
+        <p>Понять, почему реклама в Яндекс Директе не даёт ожидаемых бронирований.</p>
+      </div>
+      <div>
+        <span class="label">Что сделал</span>
+        <p>Вместе со специалистами разобрал кампании и трафик за два летних сезона. Нашёл, что основной объём идёт из РСЯ, а цели в Метрике настроены неверно, поэтому стоимость брони не считалась.</p>
+      </div>
+    </div>
+    <div class="metrics">
+      <div class="metric"><b>87%</b><span>трафика из рекламы, лето 2026</span></div>
+      <div class="metric"><b>&lt;1%</b><span>конверсия трафика из РСЯ</span></div>
+      <div class="metric"><b>1:32 → 1:15</b><span>время на сайте, лето 2025 и 2026</span></div>
+      <div class="metric"><b>26% → 36%</b><span>доля отказов за тот же период</span></div>
+    </div>
+    <p class="note">Итог: план перестройки. Бюджет из РСЯ в поиск, корректные цели, развитие органики, которая приводит более целевую аудиторию.</p>
+  </article>
+
+  <article class="case">
+    <div class="case-top">
+      <h3>Перезапуск контент-каналов промышленной компании</h3>
+      <span class="where">СовПлим · март — август 2026</span>
+    </div>
+    <div class="grid2">
+      <div>
+        <span class="label">Было</span>
+        <p>Каналы существовали формально: около 60–80 просмотров видео в месяц, без плана и без связи с продажами.</p>
+      </div>
+      <div>
+        <span class="label">Что сделал</span>
+        <p>Контент-план для ВКонтакте, Rutube и Дзена. Видео разложил по плейлистам, ссылки на обзоры встроил в шаблоны коммерческих предложений в 1С, к распространению подключил отдел продаж.</p>
+      </div>
+    </div>
+    <div class="metrics">
+      <div class="metric"><b>5 418</b><span>просмотров на Rutube, +1055% к прошлому полугодию</span></div>
+      <div class="metric"><b>87,3%</b><span>глубина просмотра видео</span></div>
+      <div class="metric"><b>5,9K</b><span>охват ВКонтакте, +283%</span></div>
+      <div class="metric"><b>30 782</b><span>показа в Дзене, 6 735 открытий</span></div>
+    </div>
+    <figure>
+      <div class="chart" id="chart"></div>
+      <figcaption>Уникальные зрители Rutube по месяцам, 2026. Пики в мае и августе совпадают с выходом новых видеообзоров.</figcaption>
+    </figure>
+    <div class="links">
+      <a class="btn" href="https://rutube.ru/channel/41339193/" target="_blank" rel="noopener">Rutube ↗</a>
+      <a class="btn" href="https://vk.ru/sovplym" target="_blank" rel="noopener">ВКонтакте ↗</a>
+      <a class="btn" href="https://dzen.ru/sovplym" target="_blank" rel="noopener">Дзен ↗</a>
+      <a class="btn" href="https://t.me/s/SovPlymOFFICIAL" target="_blank" rel="noopener">Telegram ↗</a>
+      <a class="btn" href="https://www.youtube.com/user/sovplymtv" target="_blank" rel="noopener">YouTube ↗</a>
+    </div>
+  </article>
+
+  <article class="case">
+    <div class="case-top">
+      <h3>Видеопродакшн полного цикла</h3>
+      <span class="where">СовПлим · сценарий, съёмка, монтаж, озвучка</span>
+    </div>
+    <p>Большую часть видео компании сделал сам или вместе с коллегой: от идеи и сценария до монтажа. Поэтому понимаю, сколько реально занимает ролик и как проверить работу подрядчика.</p>
+    <div class="vids">
+      <a class="vid" href="https://rutube.ru/video/dd9b19add62c8265c8e9109adc72aa74/" target="_blank" rel="noopener">
+        <b>Екатеринбургский филиал СовПлим</b>
+        <div class="roles"><span>съёмка</span><span>в кадре</span><span>интервью</span><span>монтаж</span><span>звук</span></div>
+        <span class="go">Смотреть на Rutube ↗</span>
+      </a>
+      <a class="vid" href="https://rutube.ru/video/838391f6ea642b977d4af37ba79d50db/" target="_blank" rel="noopener">
+        <b>Аспирация на участке ректификации керамогранитной плитки</b>
+        <div class="roles"><span>съёмка</span><span>в кадре</span><span>интервью</span><span class="other">монтаж — коллега</span></div>
+        <span class="go">Смотреть на Rutube ↗</span>
+      </a>
+      <a class="vid" href="https://rutube.ru/video/f4f169faac4647f2c4ec3e81f1b10d00/" target="_blank" rel="noopener">
+        <b>Обзор и испытание стола сварщика MFT-1400</b>
+        <div class="roles"><span>съёмка</span><span>ТЗ на титры и монтаж</span><span class="other">монтаж — коллега</span></div>
+        <span class="go">Смотреть на Rutube ↗</span>
+      </a>
+    </div>
+    <span class="label">Плейлисты канала</span>
+    <div class="pl">
+      <div><b>Обзоры оборудования</b><span>24 видео · 1,8 тыс. просмотров</span></div>
+      <div><b>Имиджевые видео</b><span>10 видео · 3,1 тыс. просмотров</span></div>
+      <div><b>Корпоративная жизнь</b><span>2,1 тыс. просмотров</span></div>
+      <div><b>Выставки и семинары</b><span>19 видео</span></div>
+      <div><b>Объекты и проекты</b><span>6 видео</span></div>
+      <div><b>Гайды и регламенты</b><span>3 видео</span></div>
+    </div>
+  </article>
+
+  <article class="case">
+    <div class="case-top">
+      <h3>Бренд, внутренние коммуникации, события</h3>
+      <span class="where">СовПлим · 2018 — сейчас</span>
+    </div>
+    <div class="grid2">
+      <div>
+        <span class="label">Бренд</span>
+        <ul>
+          <li>Единые коммуникации для 10 продуктовых направлений под одним брендом</li>
+          <li>Каталоги продукции, полиграфия, сувенирная продукция</li>
+          <li>Концепции выставочных стендов</li>
+        </ul>
+      </div>
+      <div>
+        <span class="label">Люди внутри</span>
+        <ul>
+          <li>Корпоративный портал на Битрикс24: новости, канал экспертов, базы знаний</li>
+          <li>Корпоративные праздники: сценарий, режиссура, роль ведущего</li>
+          <li>Контент о сотрудниках, экскурсии на производство для их детей</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section aria-labelledby="h-works">
+  <div class="sec-head">
+    <span class="label">Работы</span>
+    <h2 id="h-works">Бренд, печать, мерч</h2>
+  </div>
+  <p class="credit">Сделано вместе с дизайнером и подрядчиками. С моей стороны: техническое задание, референсы, тексты, генерации ИИ для концепций и контроль результата.</p>
+  <div class="works" id="works"></div>
+</section>
+
+<section aria-labelledby="h-path">
+  <div class="sec-head">
+    <span class="label">Путь</span>
+    <h2 id="h-path">От промышленного маркетинга к гостеприимству</h2>
+  </div>
+  <ol class="path">
+    <li><span class="yr">2012</span><div><b>Маркетолог-аналитик, СовПлим</b><p>Анализ рынка и регионов, отчёты по продажам, шаблоны коммерческих предложений в 1С.</p></div></li>
+    <li><span class="yr">2018</span><div><b>Старший маркетолог</b><p>Контент, видео, PR, выставки и семинары. Взял на себя внешние коммуникации, когда компания переехала на новое производство.</p></div></li>
+    <li><span class="yr">2023</span><div><b>Загородный клуб «Талони»</b><p>Запуск объекта и маркетинг параллельно с основной работой.</p></div></li>
+    <li><span class="yr">2025</span><div><b>Руководитель отдела рекламы</b><p>Команда до 3 человек, подрядчики, бюджет и контент-план.</p></div></li>
+    <li><span class="yr">2026</span><div><b>SWISSAM, «Управление гостиничным бизнесом»</b><p>Пройдено 6 из 10 модулей: сервис, финансы, HR, служба питания, управление доходностью, операционный менеджмент.</p></div></li>
+  </ol>
+</section>
+
+<section aria-labelledby="h-skills">
+  <div class="sec-head">
+    <span class="label">Компетенции</span>
+    <h2 id="h-skills">Инструменты и навыки</h2>
+  </div>
+  <div class="skill-groups">
+    <div class="sg"><span class="sg-t">Гостиничные системы</span><div class="skills"><span>TravelLine</span><span>Бронируй Онлайн</span></div></div>
+    <div class="sg"><span class="sg-t">Сайт и реклама</span><div class="skills"><span>Tilda</span><span>Яндекс Директ <small>в паре с менеджером Яндекса</small></span><span>Яндекс Метрика <small>базово</small></span></div></div>
+    <div class="sg"><span class="sg-t">Каналы</span><div class="skills"><span>ВКонтакте</span><span>Rutube</span><span>Дзен</span><span>Telegram</span></div></div>
+    <div class="sg"><span class="sg-t">Продакшн</span><div class="skills"><span>Видеосъёмка</span><span>Видеомонтаж</span><span>ТЗ дизайнерам и подрядчикам</span></div></div>
+    <div class="sg"><span class="sg-t">AI в работе</span><div class="skills"><span>Claude</span><span>ChatGPT</span><span>тексты и презентации</span><span>анализ данных</span><span>генерация изображений</span></div></div>
+    <div class="sg"><span class="sg-t">Корпоративные системы</span><div class="skills"><span>Битрикс24</span><span>1С</span><span>Excel</span><span>PowerPoint</span></div></div>
+    <div class="sg"><span class="sg-t">Языки</span><div class="skills"><span>Английский C1</span></div></div>
+  </div>
+</section>
+
+<footer>
+  <h2>Связаться</h2>
+  <p>Открыт к ролям в маркетинге и бренд-коммуникациях гостиничных компаний и девелоперов. Удобен видеозвонок в рабочее время.</p>
+  <div class="contacts">
+    <span class="chip"><span class="val">+7 (911) 944-99-31</span></span>
+    <span class="chip"><span class="val">kirant91@ya.ru</span></span>
+  </div>
+</footer>
+
+</div>
+
+<dialog class="lb" id="lb" aria-label="Просмотр работы">
+  <div class="lb-inner">
+    <img id="lb-img" alt="">
+    <div class="lb-bar">
+      <button type="button" id="lb-prev">← Назад</button>
+      <span id="lb-cap"></span>
+      <button type="button" id="lb-next">Вперёд →</button>
+      <button type="button" id="lb-close">Закрыть</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  // works gallery
+  var works=[
+    {t:"Брендбук компании",d:"Видение бренда, правила логотипа, система иконок. Структура и тексты.",imgs:[["brandbook-cover","Обложка брендбука"],["brandbook-vision","Видение бренда и миссия"],["brandbook-logo","Правила использования логотипа"],["brandbook-icons","Иконки о компании"]]},
+    {t:"Каталоги и печатная продукция",d:"Отраслевой буклет «Аграрная и пищевая промышленность», каталог «Удаление выхлопных газов» и другие каталоги продуктовых направлений: тексты, структура разворотов, ТЗ дизайнеру.",imgs:[["booklet-cover","Обложка буклета «Аграрная и пищевая промышленность»"],["booklet-1","Разворот: взрывоопасная пыль и системы аспирации"],["booklet-2","Разворот: пылеуборка и взрывозащита"],["booklet-back","Задняя обложка буклета: о компании"],["catalog-cover","Обложка каталога «Удаление выхлопных газов»"],["catalog-spread","Разворот каталога: легковой транспорт"],["catalogs-print","Печатные каталоги продуктовых направлений"]]},
+    {t:"Выставки и семинары",d:"Стенды на отраслевых выставках, пресс-волл совместного семинара с ВЕЗА, приглашение, ролл-апы, анонсы мероприятий на сайте.",imgs:[["expo-1","Стенд СовПлим на отраслевой выставке"],["expo-2","Стенд «35 лет на рынке»"],["expo-3","Стенд сварочного направления с командой"],["expo-4","Стенд направления аспирации и пылеудаления"],["expo-seminar","Ролл-ап «Системы местной вытяжной вентиляции» на семинаре"],["presswall","Пресс-волл для совместного семинара СовПлим и ВЕЗА"],["invite","Приглашение на выставку «Металлургия. Горное дело»"],["rollup","Ролл-ап «Системы аспирации и пылеочистки»"],["events","Раздел ближайших мероприятий на сайте"]]},
+    {t:"Мерч и сувениры",d:"Футболка к «Гонке Героев», лента для бейджа, зимний набор, подарочные наборы для клиентов и партнёров.",imgs:[["tshirt","Футболка для команды на «Гонке Героев»"],["merch-powerbank","Подарочный набор: беспроводной пауэрбанк и зарядное устройство"],["merch-notebook-pen","Ежедневник и ручка с тиснением логотипа"],["winter-merch","Новогодний набор: шарф, варежки, шапка"],["merch-cap","Бейсболка с вышивкой"],["merch-notebook-spiral","Блокнот с иконками продуктовых направлений"],["merch-flash","Флешка в фирменной упаковке"],["merch-mug","Фирменная кружка"],["lanyard","Лента для бейджа"]]}
+  ];
+  var grid=document.getElementById("works");
+  works.forEach(function(w,wi){
+    var a=document.createElement("article");a.className="work";
+    a.innerHTML='<button type="button" aria-label="Открыть: '+w.t+'"><img loading="lazy" src="img/'+w.imgs[0][0]+'.jpg" alt="'+w.imgs[0][1]+'"><span class="count">'+w.imgs.length+' фото</span></button><h3>'+w.t+'</h3><p>'+w.d+'</p>';
+    a.querySelector("button").addEventListener("click",function(){openLb(wi,0)});
+    grid.appendChild(a);
+  });
+  var lb=document.getElementById("lb"),li=document.getElementById("lb-img"),lc=document.getElementById("lb-cap"),cw=0,ci=0;
+  function show(){var it=works[cw].imgs[ci];li.src="img/"+it[0]+".jpg";li.alt=it[1];lc.textContent=it[1]+" · "+(ci+1)+"/"+works[cw].imgs.length}
+  function openLb(w,i){cw=w;ci=i;show();try{lb.showModal()}catch(e){lb.setAttribute("open","")}}
+  function step(n){var L=works[cw].imgs.length;ci=(ci+n+L)%L;show()}
+  document.getElementById("lb-prev").onclick=function(){step(-1)};
+  document.getElementById("lb-next").onclick=function(){step(1)};
+  document.getElementById("lb-close").onclick=function(){lb.close()};
+  lb.addEventListener("click",function(e){if(e.target===lb)lb.close()});
+  lb.addEventListener("keydown",function(e){if(e.key==="ArrowRight")step(1);if(e.key==="ArrowLeft")step(-1)});
+})();
+(function(){
+  // copy buttons
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var el=document.getElementById(b.dataset.copy), t=el.textContent;
+      var done=function(){b.textContent='Скопировано';setTimeout(function(){b.textContent='Копировать'},1500)};
+      var fallback=function(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Выделено'};
+      try{navigator.clipboard.writeText(t).then(done,fallback)}catch(e){fallback()}
+    });
+  });
+
+  // Rutube unique viewers by month
+  var data=[["мар",66],["апр",107],["май",206],["июн",126],["июл",87],["авг",292]];
+  var W=640,H=220,padL=36,padR=8,padT=24,padB=28,max=300;
+  var iw=W-padL-padR, ih=H-padT-padB, step=iw/data.length, bw=Math.min(56,step*0.56);
+  var y=function(v){return padT+ih-(v/max)*ih};
+  var ns="http://www.w3.org/2000/svg", svg=document.createElementNS(ns,"svg");
+  svg.setAttribute("viewBox","0 0 "+W+" "+H);
+  svg.setAttribute("role","img");
+  svg.setAttribute("aria-label","Уникальные зрители Rutube: март 66, апрель 107, май 206, июнь 126, июль 87, август 292");
+  function el(n,a,p){var e=document.createElementNS(ns,n);for(var k in a)e.setAttribute(k,a[k]);(p||svg).appendChild(e);return e}
+  [0,100,200,300].forEach(function(v){
+    el("line",{x1:padL,x2:W-padR,y1:y(v),y2:y(v),class:"grid"});
+    el("text",{x:padL-8,y:y(v)+4,"text-anchor":"end",class:"tick"}).textContent=v;
+  });
+  var box=document.getElementById("chart"), tip=document.createElement("div");
+  tip.className="tip"; tip.hidden=true;
+  data.forEach(function(d,i){
+    var cx=padL+step*i+step/2, top=y(d[1]), h=padT+ih-top;
+    var g=el("g",{class:"col",tabindex:"0"});
+    // bar with rounded top, square base
+    var r=4, x0=cx-bw/2, x1=cx+bw/2, b=padT+ih;
+    el("path",{d:"M"+x0+","+b+"V"+(top+r)+"Q"+x0+","+top+" "+(x0+r)+","+top+"H"+(x1-r)+"Q"+x1+","+top+" "+x1+","+(top+r)+"V"+b+"Z",class:"b"},g);
+    el("rect",{x:cx-step/2,y:padT,width:step,height:ih,class:"hit"},g);
+    el("text",{x:cx,y:H-8,"text-anchor":"middle",class:"tick"},g).textContent=d[0];
+    if(i===0||i===data.length-1) el("text",{x:cx,y:top-7,"text-anchor":"middle",class:"val"},g).textContent=d[1];
+    var show=function(){var bb=box.getBoundingClientRect(),s=bb.width/W;tip.textContent=d[0]+": "+d[1]+" зрителей";tip.style.left=(cx*s)+"px";tip.style.top=(top*s)+"px";tip.hidden=false};
+    g.addEventListener("mouseenter",show); g.addEventListener("focus",show);
+    g.addEventListener("mouseleave",function(){tip.hidden=true}); g.addEventListener("blur",function(){tip.hidden=true});
+  });
+  box.appendChild(svg); box.appendChild(tip);
+})();
+</script>
+</body>
+</html>
