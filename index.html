@@ -50,6 +50,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .contacts{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-top:4px}
 .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:14px;color:var(--fg);text-decoration:none}
 .chip button{font:inherit;font-size:12px;color:var(--accent);background:none;border:0;padding:0;cursor:pointer}
+.chip.hh{color:var(--accent);font-weight:500;border-color:var(--accent)}
+.chip.hh:hover{background:var(--accent-soft)}
 .chip .val{user-select:all;font-variant-numeric:tabular-nums}
 
 /* Sections */
@@ -251,6 +253,7 @@ footer h2{font-size:24px}
   <div class="contacts">
     <span class="chip"><span class="val" id="phone">+7 (911) 944-99-31</span><button type="button" data-copy="phone">Копировать</button></span>
     <span class="chip"><span class="val" id="mail">kirant91@ya.ru</span><button type="button" data-copy="mail">Копировать</button></span>
+    <a class="chip hh" href="https://spb.hh.ru/resume/aca8b605ff00ec518e0039ed1f535641483467" target="_blank" rel="noopener">Резюме на hh.ru ↗</a>
   </div>
   <div class="offer">
     <div><b>Запуск объекта с нуля</b><p>Сайт, модуль бронирования, OTA, съёмки, карточки на картах — прошёл весь путь на «Талони».</p></div>
@@ -528,6 +531,7 @@ footer h2{font-size:24px}
   <div class="contacts">
     <span class="chip"><span class="val">+7 (911) 944-99-31</span></span>
     <span class="chip"><span class="val">kirant91@ya.ru</span></span>
+    <a class="chip hh" href="https://spb.hh.ru/resume/aca8b605ff00ec518e0039ed1f535641483467" target="_blank" rel="noopener">Резюме на hh.ru ↗</a>
   </div>
 </footer>
 
