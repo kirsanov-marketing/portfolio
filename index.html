@@ -69,6 +69,7 @@ section{display:flex;flex-direction:column;gap:28px}
 .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
 .metric{background:var(--accent-soft);padding:14px 16px;display:flex;flex-direction:column;gap:2px;min-width:0}
 .metric b{font-family:var(--display);font-size:26px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--fg);line-height:1.2}
+.metric b small{font-size:15px;color:var(--muted);font-weight:500}
 .metric span{font-size:13px;color:var(--muted);line-height:1.35}
 .note{font-size:14px;color:var(--muted)}
 .links{display:flex;flex-wrap:wrap;gap:10px}
@@ -154,6 +155,53 @@ footer h2{font-size:24px}
 }
 @media (prefers-reduced-motion:no-preference){.btn,.chip{transition:background .15s}}
 
+/* Steps, CJM, pages */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;counter-reset:st}
+.steps li{counter-increment:st;border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.steps li b{font-size:15px;font-weight:600}
+.steps li b::before{content:counter(st) " · ";color:var(--accent);font-family:var(--mono);font-weight:500}
+.steps li span{font-size:14px;line-height:1.45}
+.steps li em{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:auto;padding-top:4px}
+@media (max-width:640px){.steps{grid-template-columns:1fr}}
+.cjm{margin:0;background:var(--accent-soft);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.cjm figcaption{font-size:13px;color:var(--muted)}
+.cjm table{width:100%;border-collapse:collapse;font-size:14px}
+.cjm th{text-align:left;font-family:var(--mono);font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;padding:0 0 6px}
+.cjm td{padding:6px 0;border-top:1px solid color-mix(in srgb,var(--accent) 18%,transparent)}
+.cjm td:first-child{width:46%}
+.cjm i{display:inline-block;height:8px;border-radius:4px;background:var(--accent);vertical-align:middle}
+.cjm td+td{width:27%;padding-right:10px}.cjm i.p5{width:90%;opacity:.9}.cjm i.p4{width:72%;opacity:.75}.cjm i.p3{width:54%;opacity:.6}.cjm i.p1{width:18%}
+.cjm .note{margin:0}
+.pages{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.pages>div{border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:4px}
+.pages b{font-size:15px;font-weight:600}
+.pages span{font-size:13px;color:var(--muted);line-height:1.4}
+.pages em{font-style:normal;font-family:var(--mono);font-size:11px;align-self:flex-start;margin-top:6px;padding:2px 8px;border-radius:999px;border:1px dashed var(--line);color:var(--muted)}
+.pages em.ok{border:0;background:var(--accent-soft);color:var(--accent)}
+
+/* Offer strip */
+.offer{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:4px}
+.offer>div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.offer b{font-weight:600;font-size:15px}
+.offer p{font-size:14px;color:var(--muted);line-height:1.45}
+@media (max-width:640px){.offer{grid-template-columns:1fr}}
+/* Case media */
+.media{display:flex;flex-direction:column;gap:8px}
+.media button{all:unset;cursor:zoom-in;display:block;border-radius:10px;overflow:hidden;background:var(--line);position:relative}
+.media button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.media img{display:block;width:100%;height:100%;object-fit:cover}
+.m-main{aspect-ratio:16/9}
+.m-thumbs{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.m-thumbs button{aspect-ratio:4/3}
+@media (max-width:640px){.m-thumbs{grid-template-columns:repeat(3,1fr)}}
+.shots{display:grid;grid-template-columns:1fr 1.2fr;gap:10px;align-items:start}
+.shots.two{grid-template-columns:1fr 1fr}
+.shots img{width:100%;display:block;border-radius:10px;border:1px solid var(--line)}
+.shots.two img{aspect-ratio:3/2;object-fit:cover}
+@media (max-width:640px){.shots,.shots.two{grid-template-columns:1fr}}
+.cap{font-size:13px;color:var(--muted);margin-top:-6px}
+.vid .thumb{width:calc(100% + 32px);margin:-16px -16px 0;aspect-ratio:16/9;object-fit:cover;border-radius:12px 12px 0 0;display:block;max-width:none}
+
 .print-only{display:none}
 @media print{
   .print-only{display:block;font-size:13px;color:var(--muted)}
@@ -163,9 +211,21 @@ footer h2{font-size:24px}
   body{font-size:13px}
   .wrap{padding:0;gap:36px;max-width:none}
   .chip button,dialog.lb,.tip,.work .count{display:none!important}
-  .case,.metrics,.case-top,.chart,.vid,.work,.sg,.path li,figure,footer{break-inside:avoid}
+  .metrics,.case-top,.chart,.vid,.work,.sg,.path li,figure,footer,.media,.shots,.offer,.steps,.pages>div{break-inside:avoid}
+  .case{break-inside:auto}
+  .wrap,.wrap>section,.case,.media{display:block!important}
+  .wrap>*+*{margin-top:30px}
+  .wrap>section>*+*,.case>*+*{margin-top:14px}
+  .m-thumbs{margin-top:8px}
+  .media .m-main{aspect-ratio:21/9!important;height:auto}
+  section[aria-labelledby=h-works]{break-before:page}
+  .vids,.works{display:flex!important;flex-wrap:wrap;gap:12px}
+  .vids>.vid{flex:1 1 30%;min-width:0}
+  .works>.work{flex:0 0 calc(50% - 6px)}
   h2,h3,.sec-head{break-after:avoid}
   .works{grid-template-columns:repeat(2,1fr)}
+  .offer{grid-template-columns:repeat(3,1fr)}
+  .media,.shots{break-inside:avoid}
   .work button{cursor:default}
   .vid:hover{background:none}
   a{color:var(--accent)}
@@ -190,6 +250,11 @@ footer h2{font-size:24px}
     <span class="chip"><span class="val" id="phone">+7 (911) 944-99-31</span><button type="button" data-copy="phone">Копировать</button></span>
     <span class="chip"><span class="val" id="mail">kirant91@ya.ru</span><button type="button" data-copy="mail">Копировать</button></span>
   </div>
+  <div class="offer">
+    <div><b>Запуск объекта с нуля</b><p>Сайт, модуль бронирования, OTA, съёмки, карточки на картах — прошёл весь путь на «Талони».</p></div>
+    <div><b>Контент, который продаёт</b><p>Видео и каналы, встроенные в путь клиента к покупке, а не ради охватов.</p></div>
+    <div><b>События и впечатление гостя</b><p>Пишу сценарии и сам веду мероприятия, работаю с отзывами гостей.</p></div>
+  </div>
   <p class="print-only">Онлайн-версия с фотогалереей: <a href="https://kirsanov-marketing.github.io/portfolio/">kirsanov-marketing.github.io/portfolio</a></p>
 </header>
 
@@ -205,6 +270,29 @@ footer h2{font-size:24px}
       <span class="where">2023 — сейчас · Приозерский р-н, ЛО</span>
     </div>
     <p>Коттеджный клуб в 130 км от Петербурга: 5 категорий размещения, pet-friendly, рядом три горнолыжных курорта. Подключился на этапе идеи, вёл ввод объекта в эксплуатацию и сейчас отвечаю за маркетинг и дистрибуцию.</p>
+    <div class="media" data-set="taloni">
+      <button type="button" class="m-main" data-i="0"><img src="taloni-territory.jpg" alt="Территория клуба «Талони» осенью"></button>
+      <div class="m-thumbs">
+        <button type="button" data-i="1"><img loading="lazy" src="taloni-house.jpg" alt="Двухэтажный дом"></button>
+        <button type="button" data-i="2"><img loading="lazy" src="taloni-dining.jpg" alt="Гостиная с камином"></button>
+        <button type="button" data-i="3"><img loading="lazy" src="taloni-loft.jpg" alt="Студия со вторым светом"></button>
+        <button type="button" data-i="4"><img loading="lazy" src="taloni-studio.jpg" alt="Студия в мансарде"></button>
+        <button type="button" data-i="6"><img loading="lazy" src="taloni-site.jpg" alt="Главная страница сайта taloni-club.ru"></button>
+        <button type="button" data-i="7"><img loading="lazy" src="taloni-yandex.jpg" alt="Карточка на Яндекс Картах"></button>
+      </div>
+    </div>
+    <span class="label">Август 2026 к августу 2025</span>
+    <div class="metrics">
+      <div class="metric"><b>+66%</b><span>выручка</span></div>
+      <div class="metric"><b>+31%</b><span>средняя цена ночи</span></div>
+      <div class="metric"><b>+27%</b><span>проданных ночей</span></div>
+    </div>
+    <p class="note">Рост без скидок: подняли цену, и спрос её выдержал. Это результат объекта, где я веду маркетинг и участвую в ценообразовании. Вклад отдельных каналов пока не разделён — как раз настраиваю сквозную аналитику.</p>
+    <div class="metrics">
+      <div class="metric"><b>4,8</b><span>рейтинг на Яндекс Картах</span></div>
+      <div class="metric"><b>52</b><span>отзыва гостей</span></div>
+      <div class="metric"><b>5</b><span>категорий размещения</span></div>
+    </div>
     <div class="grid2">
       <div>
         <span class="label">Запуск</span>
@@ -218,7 +306,7 @@ footer h2{font-size:24px}
         <span class="label">Операционная работа</span>
         <ul>
           <li>Соцсети, карточки в агрегаторах и на картах, ответы на отзывы</li>
-          <li>Сопровождение бронирований, учёт</li>
+          <li>Аудит рекламы: 87% трафика шло из РСЯ с конверсией меньше 1% — подготовил план перестройки бюджета и целей</li>
           <li>Стратегия с инвесторами: банный комплекс, межсезонье, смена системы бронирования</li>
         </ul>
       </div>
@@ -228,26 +316,62 @@ footer h2{font-size:24px}
 
   <article class="case">
     <div class="case-top">
-      <h3>Аудит рекламы «Талони»</h3>
-      <span class="where">2026 · Яндекс Директ, Метрика, 2ГИС</span>
+      <h3>«Талони»: сезонные и сегментные продукты вместо скидок</h3>
+      <span class="where">2026 · на основе итоговых проектов SWISSAM</span>
     </div>
     <div class="grid2">
       <div>
-        <span class="label">Задача</span>
-        <p>Понять, почему реклама в Яндекс Директе не даёт ожидаемых бронирований.</p>
+        <span class="label">Проблема</span>
+        <p>Будни загружены вдвое слабее выходных, октябрь и ноябрь почти пустые. Скидка на будни уже на уровне рынка, но разрыв за год не сократился: она монетизирует тех, кто приехал бы и так, а новый спрос не создаёт.</p>
       </div>
       <div>
-        <span class="label">Что сделал</span>
-        <p>Вместе со специалистами разобрал кампании и трафик за два летних сезона. Нашёл, что основной объём идёт из РСЯ, а цели в Метрике настроены неверно, поэтому стоимость брони не считалась.</p>
+        <span class="label">Вывод</span>
+        <p>Рычаг не цена, а повод приехать именно в будни и межсезонье. Вместо процента скидки — пакет с понятной ценностью: поздний выезд, дрова, ёлка в доме. Под каждый сегмент — своя посадочная страница.</p>
       </div>
     </div>
-    <div class="metrics">
-      <div class="metric"><b>87%</b><span>трафика из рекламы, лето 2026</span></div>
-      <div class="metric"><b>&lt;1%</b><span>конверсия трафика из РСЯ</span></div>
-      <div class="metric"><b>1:32 → 1:15</b><span>время на сайте, лето 2025 и 2026</span></div>
-      <div class="metric"><b>26% → 36%</b><span>доля отказов за тот же период</span></div>
+    <ol class="steps">
+      <li><b>Экономика</b><span>Посчитал точку безубыточности по каждому дому, разобрал тарифную сетку и цены 19 конкурентов. Нашёл, что будний тариф самой популярной категории ниже точки безубыточности.</span><em>Управление доходностью</em></li>
+      <li><b>Гости</b><span>Пять персон межсезонья по осям «есть повод / нет повода» и «планирует заранее / решает спонтанно». Для самой уязвимой — «Выгоревшего» — построил путь до брони и убрал из него лишние решения.</span><em>Сервис-менеджмент</em></li>
+      <li><b>Страницы</b><span>Под каждую персону — посадочная страница: текст, структура в Tilda, SEO, цели в Метрике и кампания в Директе.</span><em>Маркетинг</em></li>
+    </ol>
+    <figure class="cjm">
+      <figcaption>Путь «Выгоревшего» до брони: насколько каждый шаг нагружает человека, которому трудно думать (из 5)</figcaption>
+      <table>
+        <thead><tr><th>Шаг</th><th>Было</th><th>Стало</th></tr></thead>
+        <tbody>
+          <tr><td>Открывает сайт</td><td><i class="p5"></i></td><td><i class="p1"></i></td></tr>
+          <tr><td>Выбирает дом</td><td><i class="p5"></i></td><td><i class="p1"></i></td></tr>
+          <tr><td>Думает про еду и вещи</td><td><i class="p3"></i></td><td><i class="p1"></i></td></tr>
+          <tr><td>Бронирует</td><td><i class="p4"></i></td><td><i class="p1"></i></td></tr>
+        </tbody>
+      </table>
+      <p class="note">Решение: один блок вместо каталога, свободная студия выбрана заранее, в форме только дата и телефон.</p>
+    </figure>
+    <span class="label">Страницы на сайте</span>
+    <div class="pages">
+      <div><b>Pet-friendly</b><span>Гости с собаками: условия и правила проживания</span><em class="ok">запущено</em></div>
+      <div><b>«Бархатный сезон»</b><span>Сентябрь для пар без детей: тишина, тепло, нет очередей на склонах</span><em class="ok">запущено</em></div>
+      <div><b>«Без раздумий»</b><span>Студия под ключ и тариф «Долгие будни»: ранний заезд и поздний выезд</span><em class="ok">запущено</em></div>
+      <div><b>«Свой Новый год»</b><span>Ёлка в доме, дрова и мандарины к заезду — против банкетов соседей</span><em>запуск в октябре</em></div>
+      <div><b>«Аренда всей территории»</b><span>Корпоративы и выезды команд до 42 гостей</span><em>в работе</em></div>
+      <div><b>«Дни рождения и праздники»</b><span>Готовые форматы под размер компании, полная сетка цен</span><em>в работе</em></div>
     </div>
-    <p class="note">Итог: план перестройки. Бюджет из РСЯ в поиск, корректные цели, развитие органики, которая приводит более целевую аудиторию.</p>
+    <span class="label">Первый запуск: что показали данные</span>
+    <div class="metrics">
+      <div class="metric"><b>~500</b><span>визитов на «Бархатный сезон»</span></div>
+      <div class="metric"><b>2% <small>vs 16%</small></b><span>дошли до цен — против среднего по сайту</span></div>
+      <div class="metric"><b>0</b><span>броней со страницы</span></div>
+    </div>
+    <div class="grid2">
+      <div>
+        <span class="label">Причина</span>
+        <p>Разобрал воронку и открыл страницу на телефоне. Первый экран занимали контакты и кнопка «На главную», а предложение и бронирование уходили вниз. Блоки появлялись с анимацией, и страница выглядела пустой. Гость уходил раньше, чем видел цену.</p>
+      </div>
+      <div>
+        <span class="label">Что меняю</span>
+        <p>Первым экраном — фото, заголовок и кнопка «Выбрать даты», анимации убираю, все кнопки открывают бронирование на странице. Цели и рекламу перевожу с визитов на покупку. «Новый год» и «Дни рождения» собираю уже по этим правилам.</p>
+      </div>
+    </div>
   </article>
 
   <article class="case">
@@ -266,15 +390,20 @@ footer h2{font-size:24px}
       </div>
     </div>
     <div class="metrics">
-      <div class="metric"><b>5 418</b><span>просмотров на Rutube, +1055% к прошлому полугодию</span></div>
+      <div class="metric"><b>~900</b><span>просмотров в месяц на Rutube, было 60–80</span></div>
       <div class="metric"><b>87,3%</b><span>глубина просмотра видео</span></div>
       <div class="metric"><b>5,9K</b><span>охват ВКонтакте, +283%</span></div>
       <div class="metric"><b>30 782</b><span>показа в Дзене, 6 735 открытий</span></div>
+    </div>
+    <div class="shots">
+      <img loading="lazy" src="channels-vk.jpg" alt="Сообщество СовПлим во ВКонтакте">
+      <img loading="lazy" src="channels-rutube.jpg" alt="Плейлисты канала СовПлим на Rutube">
     </div>
     <figure>
       <div class="chart" id="chart"></div>
       <figcaption>Уникальные зрители Rutube по месяцам, 2026. Пики в мае и августе совпадают с выходом новых видеообзоров.</figcaption>
     </figure>
+    <p class="note">Для отеля подход тот же: контент встроен в путь гостя к бронированию и помогает продажам, а не живёт отдельно ради охватов.</p>
     <div class="links">
       <a class="btn" href="https://rutube.ru/channel/41339193/" target="_blank" rel="noopener">Rutube ↗</a>
       <a class="btn" href="https://vk.ru/sovplym" target="_blank" rel="noopener">ВКонтакте ↗</a>
@@ -292,52 +421,51 @@ footer h2{font-size:24px}
     <p>Большую часть видео компании сделал сам или вместе с коллегой: от идеи и сценария до монтажа. Поэтому понимаю, сколько реально занимает ролик и как проверить работу подрядчика.</p>
     <div class="vids">
       <a class="vid" href="https://rutube.ru/video/dd9b19add62c8265c8e9109adc72aa74/" target="_blank" rel="noopener">
+        <img class="thumb" loading="lazy" src="vid-ekb.jpg" alt="Офис и производство в Екатеринбурге">
         <b>Екатеринбургский филиал СовПлим</b>
         <div class="roles"><span>съёмка</span><span>в кадре</span><span>интервью</span><span>монтаж</span><span>звук</span></div>
         <span class="go">Смотреть на Rutube ↗</span>
       </a>
       <a class="vid" href="https://rutube.ru/video/838391f6ea642b977d4af37ba79d50db/" target="_blank" rel="noopener">
+        <img class="thumb" loading="lazy" src="vid-aspiration.jpg" alt="Аспирация на участке ректификации">
         <b>Аспирация на участке ректификации керамогранитной плитки</b>
         <div class="roles"><span>съёмка</span><span>в кадре</span><span>интервью</span><span class="other">монтаж — коллега</span></div>
         <span class="go">Смотреть на Rutube ↗</span>
       </a>
       <a class="vid" href="https://rutube.ru/video/f4f169faac4647f2c4ec3e81f1b10d00/" target="_blank" rel="noopener">
+        <img class="thumb" loading="lazy" src="vid-welding.jpg" alt="Испытание стола сварщика">
         <b>Обзор и испытание стола сварщика MFT-1400</b>
         <div class="roles"><span>съёмка</span><span>ТЗ на титры и монтаж</span><span class="other">монтаж — коллега</span></div>
         <span class="go">Смотреть на Rutube ↗</span>
       </a>
     </div>
-    <span class="label">Плейлисты канала</span>
-    <div class="pl">
-      <div><b>Обзоры оборудования</b><span>24 видео · 1,8 тыс. просмотров</span></div>
-      <div><b>Имиджевые видео</b><span>10 видео · 3,1 тыс. просмотров</span></div>
-      <div><b>Корпоративная жизнь</b><span>2,1 тыс. просмотров</span></div>
-      <div><b>Выставки и семинары</b><span>19 видео</span></div>
-      <div><b>Объекты и проекты</b><span>6 видео</span></div>
-      <div><b>Гайды и регламенты</b><span>3 видео</span></div>
-    </div>
   </article>
 
   <article class="case">
     <div class="case-top">
-      <h3>Бренд, внутренние коммуникации, события</h3>
+      <h3>События, бренд и внутренние коммуникации</h3>
       <span class="where">СовПлим · 2018 — сейчас</span>
     </div>
+    <div class="shots two">
+      <img loading="lazy" src="host-1.jpg" alt="Антон ведёт корпоративный праздник">
+      <img loading="lazy" src="host-2.jpg" alt="Антон ведёт корпоративный квиз">
+    </div>
+    <p class="cap">Корпоративные праздники: пишу сценарий, режиссирую и веду сам.</p>
     <div class="grid2">
       <div>
-        <span class="label">Бренд</span>
+        <span class="label">События</span>
         <ul>
-          <li>Единые коммуникации для 10 продуктовых направлений под одним брендом</li>
-          <li>Каталоги продукции, полиграфия, сувенирная продукция</li>
-          <li>Концепции выставочных стендов</li>
+          <li>Корпоративные праздники и квизы: сценарий, режиссура, роль ведущего</li>
+          <li>Выставки и клиентские семинары: концепции стендов, сценарий работы с гостями</li>
+          <li>Экскурсии на производство для детей сотрудников</li>
         </ul>
       </div>
       <div>
-        <span class="label">Люди внутри</span>
+        <span class="label">Бренд и люди внутри</span>
         <ul>
+          <li>Единые коммуникации для 10 продуктовых направлений под одним брендом</li>
+          <li>Каталоги продукции, полиграфия, сувенирная продукция</li>
           <li>Корпоративный портал на Битрикс24: новости, канал экспертов, базы знаний</li>
-          <li>Корпоративные праздники: сценарий, режиссура, роль ведущего</li>
-          <li>Контент о сотрудниках, экскурсии на производство для их детей</li>
         </ul>
       </div>
     </div>
@@ -363,7 +491,7 @@ footer h2{font-size:24px}
     <li><span class="yr">2018</span><div><b>Старший маркетолог</b><p>Контент, видео, PR, выставки и семинары. Взял на себя внешние коммуникации, когда компания переехала на новое производство.</p></div></li>
     <li><span class="yr">2023</span><div><b>Загородный клуб «Талони»</b><p>Запуск объекта и маркетинг параллельно с основной работой.</p></div></li>
     <li><span class="yr">2025</span><div><b>Руководитель отдела рекламы</b><p>Команда до 3 человек, подрядчики, бюджет и контент-план.</p></div></li>
-    <li><span class="yr">2026</span><div><b>SWISSAM, «Управление гостиничным бизнесом»</b><p>Пройдено 6 из 10 модулей: сервис, финансы, HR, служба питания, управление доходностью, операционный менеджмент.</p></div></li>
+    <li><span class="yr">2026</span><div><b>SWISSAM, «Управление гостиничным бизнесом»</b><p>Пройдено 6 из 10 модулей: сервис, финансы, HR, служба питания, управление доходностью, операционный менеджмент. Итоговые проекты делаю на реальных данных «Талони».</p></div></li>
   </ol>
 </section>
 
@@ -422,10 +550,16 @@ footer h2{font-size:24px}
     a.querySelector("button").addEventListener("click",function(){openLb(wi,0)});
     grid.appendChild(a);
   });
+  var sets={taloni:[["taloni-territory","Территория клуба «Талони»"],["taloni-house","Двухэтажный дом"],["taloni-dining","Гостиная с камином"],["taloni-loft","Студия со вторым светом"],["taloni-studio","Студия в мансарде"],["taloni-living","Гостиная в доме"],["taloni-site","Главная страница сайта taloni-club.ru"],["taloni-yandex","Карточка на Яндекс Картах: 4,8 и 52 отзыва"]]};
+  document.querySelectorAll(".media[data-set]").forEach(function(m){
+    var list=sets[m.dataset.set];
+    m.querySelectorAll("button[data-i]").forEach(function(b){b.addEventListener("click",function(){openList(list,+b.dataset.i)})});
+  });
   var lb=document.getElementById("lb"),li=document.getElementById("lb-img"),lc=document.getElementById("lb-cap"),cw=0,ci=0;
-  function show(){var it=works[cw].imgs[ci];li.src=""+it[0]+".jpg";li.alt=it[1];lc.textContent=it[1]+" · "+(ci+1)+"/"+works[cw].imgs.length}
-  function openLb(w,i){cw=w;ci=i;show();try{lb.showModal()}catch(e){lb.setAttribute("open","")}}
-  function step(n){var L=works[cw].imgs.length;ci=(ci+n+L)%L;show()}
+  function show(){var it=cur[ci];li.src=""+it[0]+".jpg";li.alt=it[1];lc.textContent=it[1]+" · "+(ci+1)+"/"+cur.length}
+  var cur=[];function openList(l,i){cur=l;ci=i;show();try{lb.showModal()}catch(e){lb.setAttribute("open","")}}
+  function openLb(w,i){cur=works[w].imgs;ci=i;show();try{lb.showModal()}catch(e){lb.setAttribute("open","")}}
+  function step(n){var L=cur.length;ci=(ci+n+L)%L;show()}
   document.getElementById("lb-prev").onclick=function(){step(-1)};
   document.getElementById("lb-next").onclick=function(){step(1)};
   document.getElementById("lb-close").onclick=function(){lb.close()};
