@@ -162,7 +162,9 @@ footer h2{font-size:24px}
 .steps li b::before{content:counter(st) " · ";color:var(--accent);font-family:var(--mono);font-weight:500}
 .steps li span{font-size:14px;line-height:1.45}
 .steps li em{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:auto;padding-top:4px}
-@media (max-width:640px){.steps{grid-template-columns:1fr}}
+.crm{display:flex;flex-direction:column;gap:10px}
+.steps.four{grid-template-columns:repeat(4,1fr)}
+@media (max-width:640px){.steps,.steps.four{grid-template-columns:1fr}}
 .cjm{margin:0;background:var(--accent-soft);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
 .cjm figcaption{font-size:13px;color:var(--muted)}
 .cjm table{width:100%;border-collapse:collapse;font-size:14px}
@@ -211,7 +213,7 @@ footer h2{font-size:24px}
   body{font-size:13px}
   .wrap{padding:0;gap:36px;max-width:none}
   .chip button,dialog.lb,.tip,.work .count{display:none!important}
-  .metrics,.case-top,.chart,.vid,.work,.sg,.path li,figure,footer,.media,.shots,.offer,.steps,.pages>div{break-inside:avoid}
+  .metrics,.case-top,.chart,.vid,.work,.sg,.path li,figure,footer,.media,.shots,.offer,.steps,.pages>div,.crm{break-inside:avoid}
   .case{break-inside:auto}
   .wrap,.wrap>section,.case,.media{display:block!important}
   .wrap>*+*{margin-top:30px}
@@ -222,7 +224,7 @@ footer h2{font-size:24px}
   .vids,.works{display:flex!important;flex-wrap:wrap;gap:12px}
   .vids>.vid{flex:1 1 30%;min-width:0}
   .works>.work{flex:0 0 calc(50% - 6px)}
-  h2,h3,.sec-head{break-after:avoid}
+  h2,h3,.sec-head,.case>.label{break-after:avoid}
   .works{grid-template-columns:repeat(2,1fr)}
   .offer{grid-template-columns:repeat(3,1fr)}
   .media,.shots{break-inside:avoid}
@@ -310,6 +312,15 @@ footer h2{font-size:24px}
           <li>Стратегия с инвесторами: банный комплекс, межсезонье, смена системы бронирования</li>
         </ul>
       </div>
+    </div>
+    <div class="crm">
+    <span class="label">amoCRM: частичная автоматизация работы с гостями</span>
+    <ol class="steps four">
+      <li><b>Прогрев</b><span>Касания с теми, кто оставил заявку, но ещё не забронировал</span></li>
+      <li><b>Напоминания</b><span>Гостю — перед заездом, команде — о задачах по брони</span></li>
+      <li><b>Отзывы</b><span>Обратная связь после выезда и просьба оставить отзыв</span></li>
+      <li><b>Возврат</b><span>Повод вернуться для тех, кто уже у нас отдыхал</span></li>
+    </ol>
     </div>
     <div class="links"><a class="btn" href="https://taloni-club.ru" target="_blank" rel="noopener">taloni-club.ru ↗</a></div>
   </article>
@@ -501,7 +512,7 @@ footer h2{font-size:24px}
     <h2 id="h-skills">Инструменты и навыки</h2>
   </div>
   <div class="skill-groups">
-    <div class="sg"><span class="sg-t">Гостиничные системы</span><div class="skills"><span>TravelLine</span><span>Бронируй Онлайн</span></div></div>
+    <div class="sg"><span class="sg-t">Гостиничные системы</span><div class="skills"><span>TravelLine</span><span>Бронируй Онлайн</span><span>amoCRM</span></div></div>
     <div class="sg"><span class="sg-t">Сайт и реклама</span><div class="skills"><span>Tilda</span><span>Яндекс Директ <small>в паре с менеджером Яндекса</small></span><span>Яндекс Метрика <small>базово</small></span></div></div>
     <div class="sg"><span class="sg-t">Каналы</span><div class="skills"><span>ВКонтакте</span><span>Rutube</span><span>Дзен</span><span>Telegram</span></div></div>
     <div class="sg"><span class="sg-t">Продакшн</span><div class="skills"><span>Видеосъёмка</span><span>Видеомонтаж</span><span>ТЗ дизайнерам и подрядчикам</span></div></div>
